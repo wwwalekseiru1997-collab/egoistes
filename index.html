@@ -1,202 +1,248 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<title>Signal App</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0f1115;
-    color: #fff;
-}
-.container {
-    max-width: 420px;
-    margin: auto;
-    padding: 20px;
-}
-h2 {
-    text-align: center;
-    margin-bottom: 15px;
-}
-.switch {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-.switch button {
-    flex: 1;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    background: #1c1f26;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-}
-.switch button.active {
-    background: #2d7dff;
-}
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-}
-.grid button {
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
-    background: #1c1f26;
-    color: #fff;
-    cursor: pointer;
-}
-.grid button.active {
-    background: #2d7dff;
-}
-.signal {
-    margin-top: 20px;
-    padding: 15px;
-    background: #1c1f26;
-    border-radius: 10px;
-    text-align: center;
-}
-.signal strong {
-    display: block;
-    margin: 5px 0;
-}
-.action {
-    margin-top: 15px;
-    display: flex;
-    gap: 10px;
-}
-.action button {
-    flex: 1;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-}
-.open {
-    background: #22c55e;
-    color: #000;
-}
-.reset {
-    background: #ef4444;
-    color: #fff;
-}
-</style>
+    <meta charset="UTF-8">
+    <title>VIP ЦВЕТЫ — Премиальные букеты</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --black: #0b0b0b;
+            --gold: #d4af37;
+            --gold-soft: #c9a24d;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--black);
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* HEADER */
+        header {
+            padding: 25px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(212,175,55,0.2);
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 28px;
+            letter-spacing: 3px;
+            color: var(--gold);
+        }
+
+        nav a {
+            margin-left: 40px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.85;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        /* HERO */
+        .hero {
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 58px;
+            color: var(--gold);
+            margin-bottom: 20px;
+            letter-spacing: 4px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.85;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        /* SECTION */
+        section {
+            padding: 100px 60px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-size: 42px;
+            color: var(--gold);
+            margin-bottom: 60px;
+        }
+
+        /* PRODUCTS */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .product {
+            border: 1px solid rgba(212,175,55,0.2);
+            padding: 30px;
+            text-align: center;
+        }
+
+        .product img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .product h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: var(--gold);
+        }
+
+        .product span {
+            display: block;
+            margin-top: 15px;
+            font-size: 18px;
+            color: var(--gold-soft);
+        }
+
+        /* ABOUT */
+        .about {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        /* FOOTER */
+        footer {
+            border-top: 1px solid rgba(212,175,55,0.2);
+            padding: 40px;
+            text-align: center;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 20px;
+            }
+
+            nav a {
+                margin-left: 20px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            section {
+                padding: 70px 20px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-<div class="container">
 
-<h2>Выбор рынка</h2>
-<div class="switch">
-    <button id="forexBtn" class="active" onclick="setMarket('FOREX')">FOREX</button>
-    <button id="otcBtn" onclick="setMarket('OTC')">OTC</button>
-</div>
+<header>
+    <div class="logo">VIP ЦВЕТЫ</div>
+    <nav>
+        <a href="#catalog">Каталог</a>
+        <a href="#about">О нас</a>
+        <a href="#contact">Контакты</a>
+    </nav>
+</header>
 
-<h2>Валютная пара</h2>
-<div class="grid" id="pairs"></div>
-
-<h2>Таймфрейм</h2>
-<div class="grid" id="timeframes"></div>
-
-<div class="signal" id="signal" style="display:none;">
-    <strong id="signalPair"></strong>
-    <strong id="signalTime"></strong>
-    <strong>📈 CALL</strong>
-    <div class="action">
-        <button class="open" onclick="openTrade()">Открыть сделку</button>
-        <button class="reset" onclick="resetAll()">Изменить</button>
+<div class="hero">
+    <div>
+        <h1>VIP ЦВЕТЫ</h1>
+        <p>Премиальные цветочные композиции для особых случаев.  
+        Эксклюзив. Статус. Эмоции.</p>
+        <a href="#catalog" class="btn">Выбрать букет</a>
     </div>
 </div>
 
-</div>
+<section id="catalog">
+    <h2 class="section-title">Коллекция</h2>
 
-<script>
-let market = 'FOREX';
-let pair = '';
-let time = '';
+    <div class="products">
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1526045478516-99145907023c" alt="">
+            <h3>Black Rose</h3>
+            <span>от 15 000 ₽</span>
+        </div>
 
-const forexPairs = ['EUR/USD','GBP/USD','USD/JPY','AUD/USD','USD/CHF','EUR/JPY'];
-const otcPairs = ['EUR/USD OTC','GBP/USD OTC','USD/JPY OTC'];
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="">
+            <h3>Golden Bloom</h3>
+            <span>от 22 000 ₽</span>
+        </div>
 
-const forexTimes = ['1 min','3 min','5 min','10 min','15 min'];
-const otcTimes = ['5s','15s','30s','1m'];
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946" alt="">
+            <h3>Royal Luxury</h3>
+            <span>от 30 000 ₽</span>
+        </div>
+    </div>
+</section>
 
-function setMarket(type) {
-    market = type;
-    document.getElementById('forexBtn').classList.toggle('active', type === 'FOREX');
-    document.getElementById('otcBtn').classList.toggle('active', type === 'OTC');
-    pair = '';
-    time = '';
-    document.getElementById('signal').style.display = 'none';
-    renderPairs();
-    renderTimes();
-}
+<section id="about">
+    <h2 class="section-title">О бренде</h2>
+    <div class="about">
+        VIP ЦВЕТЫ — это не просто букеты.  
+        Это статусный подарок, созданный для людей,
+        которые выбирают лучшее и не идут на компромиссы.
+    </div>
+</section>
 
-function renderPairs() {
-    const box = document.getElementById('pairs');
-    box.innerHTML = '';
-    (market === 'FOREX' ? forexPairs : otcPairs).forEach(p => {
-        const b = document.createElement('button');
-        b.innerText = p;
-        b.onclick = () => selectPair(b, p);
-        box.appendChild(b);
-    });
-}
-
-function renderTimes() {
-    const box = document.getElementById('timeframes');
-    box.innerHTML = '';
-    (market === 'FOREX' ? forexTimes : otcTimes).forEach(t => {
-        const b = document.createElement('button');
-        b.innerText = t;
-        b.onclick = () => selectTime(b, t);
-        box.appendChild(b);
-    });
-}
-
-function selectPair(btn, p) {
-    document.querySelectorAll('#pairs button').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    pair = p;
-    showSignal();
-}
-
-function selectTime(btn, t) {
-    document.querySelectorAll('#timeframes button').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    time = t;
-    showSignal();
-}
-
-function showSignal() {
-    if (pair && time) {
-        document.getElementById('signalPair').innerText = pair;
-        document.getElementById('signalTime').innerText = '⏱ ' + time;
-        document.getElementById('signal').style.display = 'block';
-    }
-}
-
-function openTrade() {
-    window.open('https://pocketoption.com', '_blank');
-}
-
-function resetAll() {
-    pair = '';
-    time = '';
-    document.getElementById('signal').style.display = 'none';
-    renderPairs();
-    renderTimes();
-}
-
-renderPairs();
-renderTimes();
-</script>
+<footer id="contact">
+    © 2026 VIP ЦВЕТЫ · Премиальная доставка цветов
+</footer>
 
 </body>
 </html>
